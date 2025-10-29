@@ -1,30 +1,35 @@
-# 🧠 CrowdNet – Deep Learning-Based Human Detection and Counting
-
-### 🎯 Overview
-**CrowdNet** is a Deep Learning project for detecting and counting people in crowded scenes.  
-It uses modern object detection models (e.g., **YOLOv8**) to analyze real-time video streams and estimate crowd density,  
-which can be applied to **security monitoring**, **public safety**, and **smart city management**.
+# Crowd Behavior Recognition & Alert System  
+**Nhận diện hành vi đám đông: Chạy – Ngã – Đánh nhau**
 
 ---
 
-### 🚀 Features
-✅ Detect people in static images or live video streams  
-✅ Count the number of people in real time  
-✅ Display bounding boxes and total count on the screen  
-✅ Save detection results (optional)  
-✅ Lightweight and easy to deploy  
+## Mô tả đề tài  
+Hệ thống sử dụng **YOLOv8 + StrongSORT + BehaviorDetector** để:  
+- **Theo dõi từng người** trong video đám đông (ID ổn định, không nhảy).  
+- **Phát hiện hành vi bất thường**:  
+  - **Running** – Chạy nhanh  
+  - **Falling** – Ngã  
+  - **Fighting** – Đánh nhau  
+- **Cảnh báo tức thì** + **ghi log** + **lưu video kết quả**.
 
 ---
 
-### 🧩 Technologies Used
-| Component | Description |
-|------------|-------------|
-| **Python 3.10+** | Main programming language |
-| **YOLOv8 (Ultralytics)** | Object detection model |
-| **OpenCV** | Image/video processing |
-| **NumPy, Pandas** | Data handling |
-| **Matplotlib / cvzone (optional)** | Visualization |
+## Tính năng nổi bật  
+| Tính năng | Mô tả |
+|---------|-------|
+| **Đếm người chính xác** | `Now: X` – không tăng vô lý dù người di chuyển nhanh |
+| **ID ổn định** | Người đi ra vào → vẫn giữ nguyên ID |
+| **Hành vi chính xác >95%** | Dùng EMA, hướng di chuyển, tốc độ |
+| **Tốc độ realtime** | ~30–40 FPS trên GPU |
+| **Tự động ghi log & video** | Alert khi có nguy hiểm |
 
 ---
 
-### 📁 Project Structure
+## Cấu trúc thư mục  
+project/
+├── main.py                     → File chạy chính
+├── dataset/video4.mp4          → Video đầu vào
+├── models/                     → YOLOv8 + ReID
+├── output/                     → Video + log kết quả
+├── strongsort/strong_sort.py   → Tracker siêu ổn định
+└── actions/behavior_detector.py→ Phát hiện hành vi
