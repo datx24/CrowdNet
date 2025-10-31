@@ -25,11 +25,5 @@ Hệ thống sử dụng **YOLOv8 + StrongSORT + BehaviorDetector** để:
 
 ---
 
-## Cấu trúc thư mục  
-project/
-├── main.py                     → File chạy chính
-├── dataset/video4.mp4          → Video đầu vào
-├── models/                     → YOLOv8 + ReID
-├── output/                     → Video + log kết quả
-├── strongsort/strong_sort.py   → Tracker siêu ổn định
-└── actions/behavior_detector.py→ Phát hiện hành vi
+## 🎬 Demo Video
+👉 [Xem video demo trên YouTube](https://www.youtube.com/watch?v=lhzehACZYos)
