@@ -1,0 +1,4 @@
+mean_speed,std_speed,mean_acc,std_acc,mean_ratio,std_ratio,last_speed,last_ratio,frames,label
+34.0,12.1,4.3,2.2,1.4,0.2,40.3,1.2,8,running
+5.3,1.8,0.2,0.1,1.7,0.05,3.2,1.6,10,normal
+60.1,25.3,6.2,3.8,1.3,0.3,70.5,1.0,6,fighting
